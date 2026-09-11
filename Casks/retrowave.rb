@@ -4,7 +4,7 @@ cask "retrowave" do
 
   url "https://github.com/craigday/retrowave/releases/download/v#{version}/RetroWave-#{version}.zip"
   name "RetroWave"
-  desc "Retro LED spectrum analyzer for your Mac's audio in a floating window"
+  desc "Retro LED spectrum analyzer for system audio in a floating window"
   homepage "https://github.com/craigday/retrowave"
 
   livecheck do
@@ -12,7 +12,7 @@ cask "retrowave" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "RetroWave.app"
 
