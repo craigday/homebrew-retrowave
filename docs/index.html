@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RetroWave — retro LED spectrum analyzer for your Mac</title>
+<meta name="description" content="RetroWave listens to whatever your Mac is playing and draws a glowing retro LED spectrum analyzer in a floating transparent window.">
+<meta property="og:title" content="RetroWave">
+<meta property="og:description" content="A retro LED spectrum analyzer for your Mac's audio, floating over your desktop.">
+<meta property="og:image" content="https://craigday.github.io/homebrew-retrowave/retrowave.gif">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2314121f'/%3E%3Cg fill='%23c04cff'%3E%3Crect x='5' y='18' width='4' height='9' rx='1'/%3E%3Crect x='11' y='10' width='4' height='17' rx='1'/%3E%3Crect x='17' y='14' width='4' height='13' rx='1'/%3E%3Crect x='23' y='21' width='4' height='6' rx='1'/%3E%3C/g%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #0b0a12; --bg2: #16132a; --fg: #e9e6f7; --muted: #9a94b8;
+    --magenta: #ff40c0; --violet: #8c59ff; --cyan: #40f0ff; --card: #14121f; --line: #2a2640;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: radial-gradient(1200px 600px at 50% -10%, var(--bg2), var(--bg) 70%);
+    color: var(--fg); font: 16px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+    padding: 0 20px 60px;
+  }
+  main { max-width: 900px; margin: 0 auto; }
+  header { text-align: center; padding: 56px 0 24px; }
+  h1 {
+    margin: 0; font-size: clamp(40px, 8vw, 72px); font-weight: 800; letter-spacing: -0.02em; line-height: 1;
+    background: linear-gradient(90deg, var(--magenta), var(--violet) 55%, var(--cyan)); -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .tag { margin: 14px auto 0; max-width: 560px; color: var(--muted); font-size: 18px; }
+  .hero { margin: 28px 0; border-radius: 14px; overflow: hidden; box-shadow: 0 0 60px rgba(140, 89, 255, 0.25), 0 20px 60px rgba(0,0,0,0.5); border: 1px solid var(--line); }
+  .hero img { display: block; width: 100%; height: auto; }
+  .cta { text-align: center; margin: 8px 0 40px; }
+  .btn {
+    display: inline-block; margin: 6px; padding: 12px 22px; border-radius: 10px; font-weight: 600; text-decoration: none;
+    color: #fff; background: linear-gradient(90deg, var(--magenta), var(--violet)); box-shadow: 0 6px 24px rgba(255, 64, 192, 0.25);
+  }
+  .btn.alt { background: var(--card); border: 1px solid var(--line); color: var(--fg); box-shadow: none; }
+  h2 { font-size: 22px; margin: 40px 0 12px; }
+  pre {
+    margin: 10px 0; padding: 14px 16px; background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+    overflow-x: auto; font: 14px/1.6 ui-monospace, SFMono-Regular, Menlo, monospace; color: #d7f5ff;
+  }
+  .note { color: var(--muted); font-size: 15px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 14px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  .card h3 { margin: 0 0 6px; font-size: 16px; }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; }
+  footer { margin-top: 56px; color: var(--muted); font-size: 14px; text-align: center; }
+  a { color: var(--cyan); }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>RetroWave</h1>
+    <p class="tag">A retro LED spectrum analyzer for your Mac. It listens to whatever is playing and draws it as a glowing wall of light, floating over your desktop.</p>
+  </header>
+
+  <div class="hero"><img src="retrowave.gif" alt="RetroWave drawing a spectrum analyzer over the desktop" width="768" height="339"></div>
+
+  <div class="cta">
+    <a class="btn" href="https://github.com/craigday/homebrew-retrowave/releases/latest">Download for macOS</a>
+    <a class="btn alt" href="#install">Install with Homebrew</a>
+  </div>
+
+  <div class="grid">
+    <div class="card"><h3>Any audio, no setup</h3><p>Uses the system audio tap, so it works with every app. Nothing is recorded or stored.</p></div>
+    <div class="card"><h3>20 colour modes</h3><p>Classic tri-bar and meter, amber VFD, green phosphor, Winamp, and synthwave sets: Neon Sunset, Neon Grid, Vaporwave.</p></div>
+    <div class="card"><h3>Peak hold and beat flash</h3><p>Fast falling or floating peaks, a flash on the beat, auto-gain, and a frequency sweep when the music stops.</p></div>
+    <div class="card"><h3>Lives on your desktop</h3><p>Transparent, resizable, always on top if you like, click-through if you like. Menu-bar app, no Dock icon.</p></div>
+  </div>
+
+  <h2 id="install">Install</h2>
+  <p class="note">Requires macOS 14.2 or later. Universal binary, signed and notarised.</p>
+  <pre>brew install --cask craigday/retrowave/retrowave</pre>
+  <p class="note">Or step by step. Recent Homebrew versions ask you to trust a third-party tap once:</p>
+  <pre>brew tap craigday/retrowave
+brew trust craigday/retrowave
+brew install --cask retrowave</pre>
+  <p class="note">Without Homebrew, <a href="https://github.com/craigday/homebrew-retrowave/releases/latest">download the zip</a> and drag RetroWave into Applications. On first launch macOS asks to allow system audio recording.</p>
+
+  <h2>Support</h2>
+  <p class="note">Found a bug or want a feature? <a href="https://github.com/craigday/homebrew-retrowave/issues">Open an issue</a>. A <a href="https://github.com/craigday/homebrew-retrowave">star on GitHub</a> helps RetroWave reach the official Homebrew cask list.</p>
+
+  <footer>© 2026 Craig Day. All rights reserved. RetroWave is free to use.</footer>
+</main>
+</body>
+</html>
