@@ -2,10 +2,10 @@ cask "retrowave" do
   version "0.1.1"
   sha256 "bdb822f17ee64a969f78f210ce42bea81c1a80468942b9751d771912fc04812e"
 
-  url "https://github.com/craigday/retrowave/releases/download/v#{version}/RetroWave-#{version}.zip"
+  url "https://github.com/craigday/homebrew-retrowave/releases/download/v#{version}/RetroWave-#{version}.zip"
   name "RetroWave"
   desc "Retro LED spectrum analyzer for system audio in a floating window"
-  homepage "https://github.com/craigday/retrowave"
+  homepage "https://github.com/craigday/homebrew-retrowave"
 
   livecheck do
     url :url
