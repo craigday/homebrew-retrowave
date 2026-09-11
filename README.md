@@ -11,22 +11,43 @@ Requires macOS 14.2 or later. Universal binary, signed and notarised.
 
 ## Install
 
+One line, which adds the tap and installs in a single step:
+
 ```sh
 brew install --cask craigday/retrowave/retrowave
 ```
 
-Homebrew asks you to trust the tap the first time. On first launch macOS
-asks to allow system audio recording; RetroWave records nothing, it only
-reads the audio to draw the display.
+Or step by step. Recent Homebrew versions treat third-party taps as
+untrusted until you say otherwise, so trust the tap once after adding it:
+
+```sh
+brew tap craigday/retrowave
+brew trust craigday/retrowave
+brew install --cask retrowave
+```
+
+On older Homebrew versions without the `trust` command, skip that line:
+
+```sh
+brew tap craigday/retrowave
+brew install --cask retrowave
+```
+
+If you use the one-line form on a recent Homebrew, it prompts you to run
+`brew trust` and then continues.
+
+On first launch macOS asks to allow system audio recording; RetroWave
+records nothing, it only reads the audio to draw the display.
 
 Without Homebrew: download `RetroWave-<version>.zip` from the
 [releases page](https://github.com/craigday/homebrew-retrowave/releases)
 and drag the app into `/Applications`.
 
-## Upgrade
+## Upgrade and uninstall
 
 ```sh
 brew upgrade --cask retrowave
+brew uninstall --cask retrowave
 ```
 
 ## Support
