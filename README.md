@@ -2,6 +2,8 @@
 
 ![RetroWave drawing a spectrum over the desktop](docs/retrowave.gif)
 
+Home page: https://craigday.github.io/homebrew-retrowave/
+
 A retro LED spectrum analyzer for your Mac. It listens to whatever your Mac
 is playing and draws a 20-band LED-style display in a floating transparent
 window, with twenty colour modes, peak hold, beat flash, and a sweep

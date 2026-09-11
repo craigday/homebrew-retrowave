@@ -5,7 +5,7 @@ cask "retrowave" do
   url "https://github.com/craigday/homebrew-retrowave/releases/download/v#{version}/RetroWave-#{version}.zip"
   name "RetroWave"
   desc "Retro LED spectrum analyzer for system audio in a floating window"
-  homepage "https://github.com/craigday/homebrew-retrowave"
+  homepage "https://craigday.github.io/homebrew-retrowave/"
 
   livecheck do
     url :url
