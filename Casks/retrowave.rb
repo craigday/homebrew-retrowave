@@ -1,6 +1,6 @@
 cask "retrowave" do
-  version "0.1.3"
-  sha256 "357bfa1f53b57781d9a65351c1065feba0cbcc828ffa8a56f38b9a3d5ec56c58"
+  version "0.1.4"
+  sha256 "8b4c06f27b14d51cef844549be792efbcd7127742998b800f133f5bdf9130b0a"
 
   url "https://github.com/craigday/homebrew-retrowave/releases/download/v#{version}/RetroWave-#{version}.zip"
   name "RetroWave"
