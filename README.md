@@ -7,8 +7,7 @@ LED spectrum analyzer for your Mac's audio in a floating transparent window.
 brew install --cask craigday/retrowave/retrowave
 ```
 
-RetroWave is not notarised. If macOS refuses to open it, right-click the app
-in `/Applications` and choose Open, or install with `--no-quarantine`.
+Releases are signed with a Developer ID and notarised by Apple.
 
 ## Updating the cask
 
